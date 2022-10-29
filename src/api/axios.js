@@ -6,6 +6,10 @@ export const api = axios.create({
 
 export const getUsers = async () => {
     const response = await api.get('/users')
-    console.log(response.data.users[0].image)
     return response.data.users
+}
+
+export const getUser = async (id) => {
+    const response = await api.get('/users')
+    return response.data.users.filter(user => user.id === parseInt(id))[0]
 }

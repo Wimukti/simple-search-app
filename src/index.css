@@ -3,9 +3,18 @@ body{
   margin: 0;
 }
 
+.tile{
+  height: 6rem;
+  background-color: white;
+  margin: 0.25rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .tileImg{
   border-radius: 50%;
-  height: 6rem;
+  height: 4rem;
   background-color: black;
 }
 
@@ -13,26 +22,17 @@ body{
   font-size: 1rem;
   font-weight: normal;
   font-family: 'Roboto', sans-serif;
-  margin: 0.5rem 3rem;
+  margin: 0.4rem 3rem;
   padding: 0;
 }
 
 .tileSubHeading{
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   font-weight: normal;
   font-family: 'Roboto', sans-serif;
   color: grey;
-  margin: 0.5rem 3rem;
+  margin: 0.4rem 3rem;
   padding: 0;
-}
-
-.tile{
-  height: 8rem;
-  background-color: white;
-  margin: 0.2rem 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .tileContent{
@@ -50,7 +50,8 @@ body{
   font-size: 1rem;
   display: flex;
   flex-flow: row nowrap;
-  margin: 10vh auto;
+  margin: 7.5vh auto;
+  background-color: white;
 }
 
 .searchInput {
@@ -61,33 +62,84 @@ body{
   outline: none;
 }
 
-.search__button {
-  width: 10%;
-  padding: 10px;
-  margin: auto;
+.searchInput::placeholder {
+  color: grey;
+  font-size: .8rem;
+  opacity: 50%; /* Firefox */
+}
+
+.searchButton {
+  width: 2rem;
   font-size: 1.5rem;
-  color: #183052;
+  padding: 5px 0 5px 20px;
+  margin: auto;
+  color: #4b6598;
   background-color: #fff;
 }
 
+/*User Profile*/
 
-/*@media (min-width: 576px) {*/
-/*  .search {*/
-/*    font-size: 1.5rem;*/
-/*  }*/
+.userProfile{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
-/*  .search__button {*/
-/*    font-size: 2rem;*/
-/*  }*/
-/*}*/
+.userProfileImg{
+  margin: 2rem;
+  border-radius: 50%;
+  height: 10rem;
+  background-color: black;
+  border: 5px solid white;
+  box-shadow: 0 1px 3px 1px rgba(128, 128, 128, 0.5);
+}
 
-/*@media (min-width: 800px) {*/
-/*  .search {*/
-/*    font-size: 2rem;*/
-/*  }*/
+.userProfileHeading{
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-family: 'Roboto', sans-serif;
+  margin: .5rem 0 .25rem;
+  padding: 0;
+}
 
-/*  .search__button {*/
-/*    padding-right: 0.5em;*/
-/*    font-size: 3rem;*/
-/*  }*/
-/*}*/
+.userProfileSubHeading{
+  font-size: 1.5rem;
+  font-weight: 300;
+  font-family: 'Roboto', sans-serif;
+  color: #707070;
+  margin: .25rem 0 .5rem;
+  padding: 0;
+}
+
+.userProfileTagLine{
+  font-size: .6rem;
+  font-weight: 400;
+  font-family: 'Roboto', sans-serif;
+  color: #282828;
+  margin: 1rem;
+  padding: 0;
+}
+
+.loader:empty {
+  position: absolute;
+  top: calc(50% - 4em);
+  left: calc(50% - 4em);
+  width: 4em;
+  height: 4em;
+  border: .75em solid rgb(198, 233, 245);
+  border-left: .75em solid #58ccf6;
+  border-radius: 50%;
+  animation: load 1.1s infinite linear;
+}
+
+@keyframes load {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
